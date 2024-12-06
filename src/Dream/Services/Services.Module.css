@@ -1,0 +1,201 @@
+/* Banner Slider Container */
+.banner-slider {
+    margin-top: 50px;
+    position: relative;
+    width: 100%;
+    height: 300px; /* Adjust height as needed */
+    overflow: hidden; /* Ensure slides do not overflow the container */
+  }
+  
+  .slide {
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    opacity: 0;
+    transition: opacity 2.5s ease-in-out, transform 2.5s;
+    transform: translateY(0); /* Start above the view */
+  }
+  
+  .slide.active {
+    opacity: 1;
+    transform: translateY(0); /* Slide into view */
+    transition-timing-function: ease-in; /* Ease-in on entry */
+  }
+  
+  .slide.inactive {
+    opacity: 0;
+    transform: translateY(200); /* Slide out to the bottom */
+    transition-timing-function: ease-out; /* Ease-out on exit */
+  }
+  
+  .slide img {
+    width: 100%;
+    height: 120%;
+    object-fit: cover; /*Ensures the image covers the slide area */
+  }
+  
+  
+  /* Dots Container */
+  .dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+  }
+  
+  /* Individual Dot */
+  .dot {
+    width: 12px;
+    height: 12px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 1.3s ease;
+  }
+  
+  .dot.active-dot {
+    background-color: #007bff; /* Active dot color */
+  }
+  
+  
+  
+  /* Center the container and add padding */
+  .video-container {
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .video-container h1 {
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    color: #007bff;
+    margin-bottom: 20px;
+  }
+  
+  /* Flexbox for video list */
+  .video-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .video-item {
+    width: 100%;
+    max-width: 300px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(65, 100, 178, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .video-item iframe {
+    width: 100%;
+    height: 180px; /* Adjust height for a consistent look */
+    border: none;
+  }
+  
+  /* Add hover effect for individual videos */
+  .video-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+  }
+  
+
+  
+  /* Section 3: Employee Cards */
+  .employee-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:20px;
+  }
+  .employee-section1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .employee-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    padding: 10px 20px;
+  }
+  
+  .employee-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 10px;
+    border: 2px solid #007bff;
+  }
+  
+  .employee-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .employee-card h4 {
+    margin: 10px 0 5px;
+    font-size: 1.1rem;
+  }
+  
+  .employee-card p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .partner-section {
+    position: relative;
+    overflow: hidden;
+     /* Ensures logos don't overflow the container */
+    width: 100%; /* Adjust to the width of your container */
+    height: 350px; /* Adjust to fit your logos */
+    background-color: #f8f9fa; /* Optional for styling */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:30px;
+    color:#007bff ;
+    font-size:17px;
+  }
+
+  
+  .logo-slider {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Spacing between logos */
+    animation: slide-left 20s linear infinite; /* Infinite horizontal slide */
+  }
+  
+  .logo-slider img {
+    height: 100%; /* Ensure logos fit within the section height */
+    max-height: 100px; /* Optional: Restrict maximum logo height */
+    object-fit: contain; /* Ensures logos maintain aspect ratio */
+  }
+  
+  /* Keyframes for horizontal sliding */
+  @keyframes slide-left {
+    0% {
+      transform: translateX(100%); /* Start from the right (outside the container) */
+    }
+    100% {
+      transform: translateX(-100%); /* End at the left (outside the container) */
+    }
+  }
+  
+  
